@@ -31,3 +31,7 @@
   border: none;
   border-bottom: 1px solid black;
 }
+
+.overLimit {
+  color: #ff1200;
+}
