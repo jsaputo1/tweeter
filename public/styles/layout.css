@@ -33,3 +33,12 @@ main {
   margin: 0 auto;
   background-color: #f4f1ec;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+/* 
+bottom border fo
+style tweet button blue and change foreignObject */
