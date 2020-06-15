@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet-list.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -54,6 +55,7 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <!-- New Tweet Submission -->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets/">
@@ -65,6 +67,23 @@
           </div>
         </form>
       </section>
+
+      <!-- List of Tweets -->
+      <section class="tweet">
+        <div class="tweet-header">
+          <h3>John Doe</h3>
+          <h3 class="username">@JohnDoe</h3>
+        </div>
+        <article>
+          <h3>Hello World!</h3>
+        </article>
+        <div class="tweet-footer">
+          <h4>10 days ago</h4>
+          <h4>Retweet/Like</h4>
+        </div>
+      </section>
+
+      <!-- End of Maine -->
     </main>
   </body>
 </html>
