@@ -1,5 +1,15 @@
 $(function () { //jQuery document ready function
 
+  // Default states
+
+  const error = $(".error h3")
+  error.hide();
+
+  $(".new-tweet textarea").keyup(function () {
+    error.html("")
+    error.slideUp()
+  })
+
   //Placeholder Tweets 
   const tweetData = [
     {
@@ -15,27 +25,12 @@ $(function () { //jQuery document ready function
     },
   ];
 
-  //Functions
-
-  // const escape =  function(str) {
-  //   let div = document.createElement('div');
-  //   div.appendChild(document.createTextNode(str));
-  //   return div.innerHTML;
-  // }
-
-
-
-  // const safeHTML = `<p>${escape(textFromUser)}</p>`;
-
+  // Functions
   const escape = function (str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   }
-
-
-  // const safeHTML = `<p>${escape(textFromUser)}</p>`;
-
 
   const createTweetElement = function (tweetData) {
     const tweet = `
@@ -58,13 +53,8 @@ $(function () { //jQuery document ready function
     return tweet
   };
 
-
-
   const renderTweets = (tweetData) => {
     for (const tweet of tweetData) {
-
-
-
       $(".tweet").prepend(createTweetElement(tweet));
     }
   };
@@ -75,13 +65,21 @@ $(function () { //jQuery document ready function
     });
   };
 
+  const errorCheck = function (tweetTextValue) {
+    if (tweetTextValue.length === 0) {
+      error.html("Error: Tweet Cannot be Empty")
+      error.slideDown();
+      return error
+    }
+    else if (tweetTextValue.length > 140) {
+      error.html("Error: Exceeded max character limit")
+      error.slideDown();
+      return error
+    }
+  }
 
-
-
-
-  //Loading all tweets tha are in the database
-  loadTweets();
-
+  loadTweets()
+  // renderTweets(tweetData)
 
   //Event listener and Ajax call
   const form = $("form");
@@ -91,10 +89,11 @@ $(function () { //jQuery document ready function
     const tweetTextValue = tweetTextBox.val().trim()
     const counter = $(".counter")
     event.preventDefault();
-    if (tweetTextValue.length === 0) {
-      alert("Tweet cannot be empty")
-      return;
+
+    if (errorCheck(tweetTextValue)) {
+      return error
     }
+
     $.ajax("/tweets/", {
       method: "POST",
       data: queryString,
