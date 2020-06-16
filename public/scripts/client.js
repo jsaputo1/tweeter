@@ -1,42 +1,24 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+$(function () { //jQuery document ready function
 
-// Test / driver code (temporary). Eventually will get this from the server.
-
-//Tweet database
-const tweetData = [
-  {
-    user: {
-      name: "Newton",
-      avatars: "https://i.imgur.com/73hZDYK.png",
-      handle: "@SirIsaac",
+  //Placeholder Tweets 
+  const tweetData = [
+    {
+      user: {
+        name: "Newton",
+        avatars: "https://i.imgur.com/73hZDYK.png",
+        handle: "@SirIsaac",
+      },
+      content: {
+        text: "If I have seen further it is by standing on the shoulders of giants",
+      },
+      created_at: 1461116232227,
     },
-    content: {
-      text:
-        "If I have seen further it is by standing on the shoulders of giants",
-    },
-    created_at: 1461116232227,
-  },
-];
+  ];
 
-const renderTweets = (array) => {
-  for (const tweet of array) {
-    // const tweet = createTweetElement(tweet);
-    $(".tweet").prepend(createTweetElement(tweet));
-  }
-};
+  //Functions
 
-const loadTweets = () => {
-  $.ajax("/tweets/", { method: "GET" }).then(function (tweets) {
-    renderTweets(tweets);
-  });
-};
-
-const createTweetElement = function (tweetData) {
-  const tweet = `
+  const createTweetElement = function (tweetData) {
+    const tweet = `
     <div class="tweet-container">
       <div class="tweet-header">
       <div class="user-info">
@@ -46,41 +28,52 @@ const createTweetElement = function (tweetData) {
       <h3 class="username">${tweetData.user.handle}</h3>
     </div>
     <article>
-    ${tweetData.content.text}
+      ${tweetData.content.text}
     </article>
     <div class="tweet-footer"><h4>${tweetData.created_at}</h4>
       <h4>Retweet/Like</h4>
     </div>
   </div>
     `;
-  return tweet;
-};
+    return tweet;
+  };
 
-$(function () {
-  const $form = $("form");
+  const renderTweets = (tweetData) => {
+    for (const tweet of tweetData) {
+      // const tweet = createTweetElement(tweet);
+      $(".tweet").prepend(createTweetElement(tweet));
+    }
+  };
+
+  const loadTweets = () => {
+    $.ajax("/tweets/", { method: "GET" }).then(function (tweets) {
+      renderTweets(tweets);
+    });
+  };
+
+  //Loading all tweets tha are in the database
   loadTweets();
 
-  $form.on("submit", function () {
-    event.preventDefault();
-    console.log("Button clicked, performing ajax call...");
-    const queryString = $(this).serialize();
 
+  //Event listener and Ajax call
+  const form = $("form");
+  form.on("submit", function (event) {
+    const queryString = $(this).serialize();
+    const tweetTextBox = $(this).find("#tweet-text")
+    const tweetTextValue = tweetTextBox.val().trim()
+    const counter = $(".counter")
+    event.preventDefault();
+    if (tweetTextValue.length === 0) {
+      alert("Tweet cannot be empty")
+      return;
+    }
     $.ajax("/tweets/", {
       method: "POST",
       data: queryString,
     }).then(function () {
-      if (queryString.length > 145) {
-        console.log("Tweet is too long");
-      } else if (queryString.length < 7) {
-        console.log("Tweet is not long enough");
-      } else {
-        $("#tweet-text").val("");
-        $(".counter").html("140");
-
-        console.log("Success: ", queryString.length);
-
-        loadTweets();
-      }
+      counter.html("140")
+      tweetTextBox.val("")
+      loadTweets();
     });
   });
 });
