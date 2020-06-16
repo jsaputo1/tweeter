@@ -17,30 +17,54 @@ $(function () { //jQuery document ready function
 
   //Functions
 
+  // const escape =  function(str) {
+  //   let div = document.createElement('div');
+  //   div.appendChild(document.createTextNode(str));
+  //   return div.innerHTML;
+  // }
+
+
+
+  // const safeHTML = `<p>${escape(textFromUser)}</p>`;
+
+  const escape = function (str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
+
+  // const safeHTML = `<p>${escape(textFromUser)}</p>`;
+
+
   const createTweetElement = function (tweetData) {
     const tweet = `
-    <div class="tweet-container">
-      <div class="tweet-header">
-      <div class="user-info">
-      <img src="${tweetData.user.avatars}">
-      <h3>${tweetData.user.name}</h3>
+      <div class="tweet-container">
+        <div class="tweet-header">
+          <div class="user-info">
+            <img src="${tweetData.user.avatars}">
+            <h3>${tweetData.user.name}</h3>
+          </div>
+          <h3 class="username">${tweetData.user.handle}</h3>
+        </div>
+        <article>
+          ${escape(tweetData.content.text)}
+        </article>
+          <div class="tweet-footer"><h4>${tweetData.created_at}</h4>
+          <h4>Retweet/Like</h4>
+        </div>
       </div>
-      <h3 class="username">${tweetData.user.handle}</h3>
-    </div>
-    <article>
-      ${tweetData.content.text}
-    </article>
-    <div class="tweet-footer"><h4>${tweetData.created_at}</h4>
-      <h4>Retweet/Like</h4>
-    </div>
-  </div>
     `;
-    return tweet;
+    return tweet
   };
+
+
 
   const renderTweets = (tweetData) => {
     for (const tweet of tweetData) {
-      // const tweet = createTweetElement(tweet);
+
+
+
       $(".tweet").prepend(createTweetElement(tweet));
     }
   };
@@ -50,6 +74,10 @@ $(function () { //jQuery document ready function
       renderTweets(tweets);
     });
   };
+
+
+
+
 
   //Loading all tweets tha are in the database
   loadTweets();
