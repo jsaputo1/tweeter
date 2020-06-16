@@ -25,15 +25,24 @@ const tweetData = [
 const renderTweets = (array) => {
   for (const tweet of array) {
     // const tweet = createTweetElement(tweet);
-    $(".tweet").append(createTweetElement(tweet));
+    $(".tweet").prepend(createTweetElement(tweet));
   }
+};
+
+const loadTweets = () => {
+  $.ajax("/tweets/", { method: "GET" }).then(function (tweets) {
+    renderTweets(tweets);
+  });
 };
 
 const createTweetElement = function (tweetData) {
   const tweet = `
     <div class="tweet-container">
       <div class="tweet-header">
+      <div class="user-info">
+      <img src="${tweetData.user.avatars}">
       <h3>${tweetData.user.name}</h3>
+      </div>
       <h3 class="username">${tweetData.user.handle}</h3>
     </div>
     <article>
@@ -49,24 +58,29 @@ const createTweetElement = function (tweetData) {
 
 $(function () {
   const $form = $("form");
+  loadTweets();
+
   $form.on("submit", function () {
     event.preventDefault();
     console.log("Button clicked, performing ajax call...");
     const queryString = $(this).serialize();
-    console.log(queryString);
-    $.ajax("/tweets/", { method: "POST", data: queryString }).then(function (
-      tweets
-    ) {
-      console.log("Success: ", tweets);
-      loadTweets();
+
+    $.ajax("/tweets/", {
+      method: "POST",
+      data: queryString,
+    }).then(function () {
+      if (queryString.length > 145) {
+        console.log("Tweet is too long");
+      } else if (queryString.length < 7) {
+        console.log("Tweet is not long enough");
+      } else {
+        $("#tweet-text").val("");
+        $(".counter").html("140");
+
+        console.log("Success: ", queryString.length);
+
+        loadTweets();
+      }
     });
   });
 });
-
-const loadTweets = () => {
-  $.ajax("/tweets/", { method: "GET" }).then(function (tweets) {
-    renderTweets(tweets);
-  });
-};
-
-loadTweets();
