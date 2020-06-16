@@ -20,6 +20,15 @@
   padding: 0px 15px;
 }
 
+.user-info {
+  display: flex;
+  margin: 15px 0;
+}
+
+.user-info img {
+  margin-right: 15px;
+}
+
 .tweet-header h3 {
   font-weight: 300;
   font-size: 0.9em;
