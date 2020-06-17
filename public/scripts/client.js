@@ -2,6 +2,7 @@ $(function () {
   // Default Hidden Divs
   const error = $(".error h3");
   const newTweetSection = $(".new-tweet");
+  const textArea = $(".new-tweet textarea");
   const arrowUp = $(".arrow-up");
   const arrowDown = $(".arrow-down");
   const scrollToTop = $(".scroll-to-top");
@@ -61,18 +62,20 @@ $(function () {
 
   const errorCheck = function (tweetTextValue) {
     const error = $(".error h3");
-    $(".new-tweet textarea").keyup(function () {
+    $(textArea).keyup(function () {
       error.html("");
       error.slideUp();
     });
 
     if (tweetTextValue.length === 0) {
       error.html("Error: Tweet Cannot be Empty");
+      textArea.focus();
       error.slideDown();
       return error;
     } else if (tweetTextValue.length > 140) {
       error.html("Error: Exceeded max character limit");
       error.slideDown();
+      textArea.focus();
       return error;
     }
   };
@@ -80,6 +83,7 @@ $(function () {
   // Event listener to toggle new tweet submission
   $(".right-nav").on("click", function (event) {
     newTweetSection.slideToggle();
+    textArea.focus();
     arrowDown.toggle();
     arrowUp.toggle();
   });
