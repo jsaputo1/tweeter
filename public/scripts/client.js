@@ -4,10 +4,12 @@ $(function () {
   const newTweetSection = $(".new-tweet");
   const arrowUp = $(".arrow-up");
   const arrowDown = $(".arrow-down");
+  const scrollToTop = $(".scroll-to-top");
   error.hide();
   newTweetSection.hide();
   arrowUp.hide();
   arrowDown.show();
+  scrollToTop.hide();
 
   // Functions
   const escape = function (str) {
@@ -80,6 +82,11 @@ $(function () {
     newTweetSection.slideToggle();
     arrowDown.toggle();
     arrowUp.toggle();
+  });
+
+  //Event listener to scroll to top
+  $(scrollToTop).click(function () {
+    $(window).scrollTop(0);
   });
 
   //Event listener and Ajax call
