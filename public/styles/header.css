@@ -21,7 +21,8 @@ header strong {
 
 @media only screen and (min-width: 1024px) {
   header {
-    width: 25vw;
-    margin: 60px;
+    width: 25%;
+    margin-top: 100px;
+    margin-left: 50px;
   }
 }
