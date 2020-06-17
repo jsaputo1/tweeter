@@ -21,7 +21,7 @@ header strong {
 
 @media screen and (min-width: 1024px) {
   header {
-    width: 25%;
+    width: 35vw;
     margin-top: 100px;
     margin-left: 50px;
   }
