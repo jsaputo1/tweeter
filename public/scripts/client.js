@@ -32,7 +32,8 @@ $(function () {
         <article>
           ${escape(tweetData.content.text)}
         </article>
-          <div class="tweet-footer"><h4>${tweetData.created_at}</h4>
+          <div class="tweet-footer"><h4>${moment(tweetData.created_at, "").fromNow()}</h4>
+          
            <h4>
              <i class="fas fa-flag"></i>
              <i class="fas fa-retweet"></i>
