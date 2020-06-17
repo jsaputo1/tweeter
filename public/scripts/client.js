@@ -68,12 +68,12 @@ $(function () {
     });
 
     if (tweetTextValue.length === 0) {
-      error.html("Error: Tweet Cannot be Empty");
+      error.html(`<i class="fas fa-exclamation-triangle"></i> Error: Tweet Cannot be Empty `);
       textArea.focus();
       error.slideDown();
       return error;
     } else if (tweetTextValue.length > 140) {
-      error.html("Error: Exceeded max character limit");
+      error.html(`<i class="fas fa-exclamation-triangle"></i> Error: Exceeded max character limit`);
       error.slideDown();
       textArea.focus();
       return error;
