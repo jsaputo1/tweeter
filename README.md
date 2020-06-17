@@ -1,8 +1,17 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simple, single-page Twitter clone. This front end was built with CSS, JS, jQuery and AJAX, and the back-end with Node and Express.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+## Final Product
+
+This is the main page. It shows a list of all Tweets that have been submitted. Users can submit new Tweets by clicking "write a new tweet" at the top right on the nav bar.
+!["Screenshot of main page"](https://github.com/jsaputo1/tweeter/blob/master/docs/screenshots/main-page.png)
+
+This is a screenshot of a tweet submission. Tweets are limited to 140 max characters, there is a dynamic counter on the bottom right of the text box. If the text box is over limit or at 0 then the user will get a corresponding error when trying to submit.
+!["Screenshot of submit tweet"](https://github.com/jsaputo1/tweeter/blob/master/docs/screenshots/submit-tweet.png)
+
+The page is responsive with views for Mobile and Desktop. This is is the view for mobile devices.
+!["Screnshot of responsive design"](https://github.com/jsaputo1/tweeter/blob/master/docs/screenshots/responsive.png)
 
 ## Getting Started
 
