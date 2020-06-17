@@ -34,4 +34,4 @@ $(document).ready(function () {
       nav.fadeIn();
     }
   });
-}); // closing document.ready
+});
