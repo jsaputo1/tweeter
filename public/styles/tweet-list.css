@@ -53,3 +53,16 @@
   font-size: 0.6em;
   padding: 0 20px;
 }
+
+.tweet-footer a {
+  color: #424ea7;
+  padding: 0 5px;
+}
+
+.tweet-footer a:visited {
+  color: #424ea7;
+}
+
+.tweet-footer a:hover {
+  color: #1a1f44;
+}
