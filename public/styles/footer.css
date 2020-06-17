@@ -11,4 +11,5 @@
 }
 .scroll-to-top i:hover {
   color: #cc1306;
+  cursor: pointer;
 }
