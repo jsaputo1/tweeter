@@ -13,3 +13,25 @@
   color: #cc1306;
   cursor: pointer;
 }
+
+@media screen and (min-width: 1024px) {
+  .scroll-to-top i {
+    font-size: 2em;
+    right: 1px;
+    bottom: 40px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .scroll-to-top i {
+    font-size: 2em;
+    right: 15px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .scroll-to-top i {
+    font-size: 4em;
+    right: 15px;
+  }
+}
