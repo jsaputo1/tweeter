@@ -20,14 +20,18 @@ nav span {
   flex-direction: column;
   align-items: center;
   margin-right: 25px;
-  border-radius: 25px;
-  padding: 10px;
+  border-radius: 20px;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+.right-nav:hover {
+  background-color: #32437c;
 }
 
 .right-nav p {
   font-family: "Source Sans Pro", sans-serif;
   margin-bottom: 10px;
-  cursor: pointer;
   text-transform: lowercase;
 }
 
@@ -41,11 +45,10 @@ nav span {
   animation-duration: 1s;
   animation-iteration-count: infinite;
   transform-origin: bottom;
-  cursor: pointer;
 }
 
 .right-nav i:hover {
-  color: #d8d5d0;
+  color: #ff0000;
 }
 
 .bounce-1 {
