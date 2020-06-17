@@ -1,30 +1,13 @@
 $(function () {
-  //jQuery document ready function
-
-  // Default states
-
+  // Default Hidden Divs
   const error = $(".error h3");
+  const newTweetSection = $(".new-tweet");
+  const arrowUp = $(".arrow-up");
+  const arrowDown = $(".arrow-down");
   error.hide();
-
-  $(".new-tweet textarea").keyup(function () {
-    error.html("");
-    error.slideUp();
-  });
-
-  // //Placeholder Tweets
-  // const tweetData = [
-  //   {
-  //     user: {
-  //       name: "Newton",
-  //       avatars: "https://i.imgur.com/73hZDYK.png",
-  //       handle: "@SirIsaac",
-  //     },
-  //     content: {
-  //       text: "If I have seen further it is by standing on the shoulders of giants",
-  //     },
-  //     created_at: 1461116232227,
-  //   },
-  // ];
+  newTweetSection.hide();
+  arrowUp.hide();
+  arrowDown.show();
 
   // Functions
   const escape = function (str) {
@@ -47,7 +30,11 @@ $(function () {
           ${escape(tweetData.content.text)}
         </article>
           <div class="tweet-footer"><h4>${tweetData.created_at}</h4>
-          <h4>Retweet/Like</h4>
+           <h4>
+             <a href="#"><i class="fas fa-flag"></i></a>
+             <a href="#"><i class="fas fa-retweet"></i></a>
+             <a href="#"><i class="fas fa-heart"></i></a>
+           </h4>
         </div>
       </div>
     `;
@@ -67,7 +54,16 @@ $(function () {
     });
   };
 
+  //Function to load existing tweets in the database
+  loadTweets();
+
   const errorCheck = function (tweetTextValue) {
+    const error = $(".error h3");
+    $(".new-tweet textarea").keyup(function () {
+      error.html("");
+      error.slideUp();
+    });
+
     if (tweetTextValue.length === 0) {
       error.html("Error: Tweet Cannot be Empty");
       error.slideDown();
@@ -79,8 +75,12 @@ $(function () {
     }
   };
 
-  loadTweets();
-  // renderTweets(tweetData)
+  // Event listener to toggle new tweet submission
+  $(".right-nav").on("click", function (event) {
+    newTweetSection.slideToggle();
+    arrowDown.toggle();
+    arrowUp.toggle();
+  });
 
   //Event listener and Ajax call
   const form = $("form");
