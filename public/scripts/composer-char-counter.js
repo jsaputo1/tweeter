@@ -13,6 +13,14 @@ $(document).ready(function () {
     }
   });
 
+  //Tweet Box size auto adjust in height
+  textarea = document.querySelector("#tweet-text");
+  textarea.addEventListener("input", autoResize, false);
+  function autoResize() {
+    this.style.height = "auto";
+    this.style.height = this.scrollHeight + "px";
+  }
+
   //Toggle scroll to top button
   $(window).scroll(function () {
     const scrollToTop = $(".scroll-to-top");
