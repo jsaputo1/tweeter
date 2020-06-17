@@ -34,9 +34,9 @@ $(function () {
         </article>
           <div class="tweet-footer"><h4>${tweetData.created_at}</h4>
            <h4>
-             <a href="#"><i class="fas fa-flag"></i></a>
-             <a href="#"><i class="fas fa-retweet"></i></a>
-             <a href="#"><i class="fas fa-heart"></i></a>
+             <i class="fas fa-flag"></i>
+             <i class="fas fa-retweet"></i>
+             <i class="fas fa-heart"></i>
            </h4>
         </div>
       </div>
