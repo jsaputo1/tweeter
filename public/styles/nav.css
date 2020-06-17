@@ -27,6 +27,7 @@ nav span {
 
 .right-nav:hover {
   background-color: #32437c;
+  color: #d8d5d0;
 }
 
 .right-nav p {
@@ -35,20 +36,11 @@ nav span {
   text-transform: lowercase;
 }
 
-.right-nav p:hover {
-  color: #d8d5d0;
-}
-
 .right-nav i {
-  color: #ffffff;
   animation-name: bounce-1;
   animation-duration: 1s;
   animation-iteration-count: infinite;
   transform-origin: bottom;
-}
-
-.right-nav i:hover {
-  color: #ff0000;
 }
 
 .bounce-1 {
