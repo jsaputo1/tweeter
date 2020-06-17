@@ -3,7 +3,7 @@
   justify-content: flex-end;
 }
 .scroll-to-top i {
-  font-size: 4em;
+  font-size: 3em;
   color: #ff1402;
   position: fixed;
   bottom: 15px;
@@ -31,7 +31,7 @@
 
 @media screen and (min-width: 1600px) {
   .scroll-to-top i {
-    font-size: 4em;
+    font-size: 3em;
     right: 15px;
   }
 }
