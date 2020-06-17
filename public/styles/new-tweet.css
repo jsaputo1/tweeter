@@ -72,4 +72,8 @@
   .new-tweet {
     margin-top: 0;
   }
+
+  #tweet-text {
+    width: 60vw;
+  }
 }
