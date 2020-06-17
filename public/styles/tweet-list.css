@@ -67,4 +67,7 @@
   .tweet-container {
     margin-top: 0;
   }
+  .tweet {
+    width: 60vw;
+  }
 }
