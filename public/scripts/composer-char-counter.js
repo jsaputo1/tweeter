@@ -16,10 +16,14 @@ $(document).ready(function () {
   //Toggle scroll to top button
   $(window).scroll(function () {
     const scrollToTop = $(".scroll-to-top");
-    if ($(this).scrollTop() > 100) {
+    const nav = $("nav");
+
+    if ($(this).scrollTop() > 200) {
       scrollToTop.fadeIn();
+      nav.fadeOut();
     } else {
       scrollToTop.fadeOut();
+      nav.fadeIn();
     }
   });
 }); // closing document.ready
