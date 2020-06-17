@@ -42,6 +42,12 @@ main {
   align-items: center;
 }
 
-/* 
-bottom border fo
-style tweet button blue and change foreignObject */
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+  }
+
+  main {
+    width: 75vw;
+  }
+}
