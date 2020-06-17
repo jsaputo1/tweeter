@@ -18,3 +18,10 @@ header h2 {
 header strong {
   font-weight: 600;
 }
+
+@media only screen and (min-width: 1024px) {
+  header {
+    width: 25vw;
+    margin: 60px;
+  }
+}
