@@ -1,5 +1,5 @@
 .new-tweet {
-  margin-top: 30px;
+  margin-bottom: 35px;
 }
 
 .new-tweet form {
@@ -24,8 +24,12 @@
   background-color: #394893;
   color: #ffffff;
   border: none;
-  height: 25px;
+  height: 30px;
   cursor: pointer;
+}
+
+.tweet-button-area button:hover {
+  background-color: #1a1f44;
 }
 
 #tweet-text {
