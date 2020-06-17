@@ -25,6 +25,7 @@
   color: #ffffff;
   border: none;
   height: 25px;
+  cursor: pointer;
 }
 
 #tweet-text {
