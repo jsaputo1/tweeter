@@ -34,10 +34,13 @@
   width: 800px;
   border: none;
   border: 1px solid #545149;
-
   border-bottom: 4px solid #545149;
   font-size: 0.8em;
   padding: 5px;
+}
+
+#tweet-text:focus {
+  outline: none;
 }
 
 .overLimit {
