@@ -1,0 +1,14 @@
+.scroll-to-top {
+  display: flex;
+  justify-content: flex-end;
+}
+.scroll-to-top i {
+  font-size: 4em;
+  color: #ff1402;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+}
+.scroll-to-top i:hover {
+  color: #cc1306;
+}
