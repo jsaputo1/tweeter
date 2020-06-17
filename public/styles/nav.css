@@ -21,9 +21,9 @@ nav span {
   align-items: center;
   margin-right: 25px;
 }
-.right-nav h4 {
+.right-nav p {
   font-family: "Source Sans Pro", sans-serif;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .right-nav i {
