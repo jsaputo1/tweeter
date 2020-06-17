@@ -54,15 +54,12 @@
   padding: 0 20px;
 }
 
-.tweet-footer a {
+.tweet-footer i {
   color: #424ea7;
   padding: 0 5px;
+  cursor: pointer;
 }
 
-.tweet-footer a:visited {
-  color: #424ea7;
-}
-
-.tweet-footer a:hover {
+.tweet-footer i:hover {
   color: #1a1f44;
 }
