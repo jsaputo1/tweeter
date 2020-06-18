@@ -12,7 +12,9 @@ This is a screenshot of a tweet submission. Tweets are limited to 140 max charac
 
 The page is responsive with views for Mobile and Desktop. This is is the view for mobile devices.
 
-<img src="https://github.com/jsaputo1/tweeter/blob/master/docs/screenshots/responsive.png" alt="Screenshot of responsive design" style="text-align: center>
+<div>
+<img src="https://github.com/jsaputo1/tweeter/blob/master/docs/screenshots/responsive.png" alt="Screenshot of responsive design" style="text-align: center">
+</div>
 
 ## Getting Started
 
