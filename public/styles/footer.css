@@ -25,13 +25,13 @@
 @media screen and (min-width: 1200px) {
   .scroll-to-top i {
     font-size: 2em;
-    right: 15px;
+    right: 2px;
   }
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1700px) {
   .scroll-to-top i {
     font-size: 3em;
-    right: 15px;
+    right: 5px;
   }
 }
