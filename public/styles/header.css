@@ -21,8 +21,11 @@ header strong {
 
 @media screen and (min-width: 1024px) {
   header {
+    justify-content: flex-start;
     width: 35vw;
-    margin-top: 100px;
-    margin-left: 50px;
+    height: 100vh;
+  }
+  header img {
+    margin-top: 50px;
   }
 }
