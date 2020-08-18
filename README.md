@@ -4,6 +4,8 @@ Tweeter is a simple, single-page Twitter clone. The front end was built using CS
 
 ## Final Product
 
+Live Demo - https://www.johnsaputo.net/tweeter/
+
 This is the main page. It shows a list of all Tweets that have been submitted. Users can submit new Tweets by clicking "write a new tweet" at the top right on the nav bar.
 !["Screenshot of main page"](https://github.com/jsaputo1/tweeter/blob/master/docs/screenshots/main-page.png)
 
